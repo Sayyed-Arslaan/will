@@ -8,8 +8,8 @@ function isAlpha(char) {
   return letter.charCodeAt(0) >= A_CODE && letter.charCodeAt(0) <= Z_CODE;
 }
 
-async function loadSound() {
-  const response = await fetch("public/bulb.mp3");
+async function loadSound(url) {
+  const response = await fetch(url);
   const arrayBuffer = await response.arrayBuffer();
   soundBuffer = await audioContext.decodeAudioData(arrayBuffer);
 }
@@ -154,7 +154,7 @@ function bindLettersWithInput(duration) {
 
 async function init() {
   setBulbs();
-  await loadSound("./bulb.mp3");
+  await loadSound("assets/bulb.mp3");
   toggleSnackbar(true, "click anywhere to start");
 
   document.addEventListener(
