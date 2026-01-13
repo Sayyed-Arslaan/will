@@ -154,7 +154,7 @@ function bindLettersWithInput(duration) {
 
 async function init() {
   setBulbs();
-  await loadSound("assets/bulb.mp3");
+  await loadSound("bulb.mp3");
   toggleSnackbar(true, "click anywhere to start");
 
   document.addEventListener(
